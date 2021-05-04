@@ -32,13 +32,11 @@ if [[ -z "${PUBLIC_REGISTER_ENABLED}" ]]; then
     export PUBLIC_REGISTER_ENABLED="false"
 fi
 
-if [ ${PUBLIC_REGISTER_ENABLED} == "true" ]; then
-    if [ ${ENABLE_GITHUB_AUTH} == "true" ]; then
-        contribs+=('"/plugins/github-auth/github-auth.json"')
-    fi
-    if [ ${ENABLE_GITLAB_AUTH} == "true" ]; then
-        contribs+=('"/plugins/gitlab-auth/gitlab-auth.json"')
-    fi
+if [ ${ENABLE_GITHUB_AUTH} == "true" ]; then
+    contribs+=('"/plugins/github-auth/github-auth.json"')
+fi
+if [ ${ENABLE_GITLAB_AUTH} == "true" ]; then
+    contribs+=('"/plugins/gitlab-auth/gitlab-auth.json"')
 fi
 
 # Importers
